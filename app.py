@@ -111,7 +111,7 @@ class DataEngine:
         return res
 
 # --- UI Logic ---
-st.title("⚖️ Comprehensive Tax Recon: 3CD vs ITR")
+st.title("⚖️ 3CD vs ITR")
 st.markdown("Handles **XML & JSON** for Corporate, Firms, and Individuals.")
 
 with st.sidebar:
@@ -148,4 +148,5 @@ if u_3cd and u_itr:
     st.table(df.style.format({"Audit (3CD)": "{:,.2f}", "Return (ITR)": "{:,.2f}", "Diff": "{:,.2f}"}))
 else:
     st.info("Please upload both files to generate the reconciliation table.")
+
 
