@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import io
 
 # --- Page Config ---
-st.set_page_config(page_title="Universal ITR vs 3CD Recon", layout="wide", page_icon="⚖️")
+st.set_page_config(page_title="ITR vs 3CD Reconciliation", layout="wide", page_icon="⚖️")
 
 class DataEngine:
     @staticmethod
@@ -115,7 +115,7 @@ st.title("⚖️ Comprehensive Tax Recon: 3CD vs ITR")
 st.markdown("Handles **XML & JSON** for Corporate, Firms, and Individuals.")
 
 with st.sidebar:
-    st.header("1. Settings")
+    st.header("1. Doc type")
     fmt_3cd = st.selectbox("3CD Format", ["JSON", "XML"])
     fmt_itr = st.selectbox("ITR Format", ["JSON", "XML"])
 
@@ -148,3 +148,4 @@ if u_3cd and u_itr:
     st.table(df.style.format({"Audit (3CD)": "{:,.2f}", "Return (ITR)": "{:,.2f}", "Diff": "{:,.2f}"}))
 else:
     st.info("Please upload both files to generate the reconciliation table.")
+
